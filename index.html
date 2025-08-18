@@ -521,25 +521,39 @@
     
     <!-- Header -->
     <header class="header fixed w-full top-0 z-50">
-        <nav class="container mx-auto flex justify-between items-center p-4">
-            <div class="logo-container">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibG9nb0dyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojN0IyRkY3O3N0b3Atb3BhY2l0eToxIiAvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRjhBM0Q7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxwYXRoIGZpbGw9InVybCgjbG9nb0dyYWQpIiBkPSJNMjAgMkM2LjE1NyAyIDIgNi4xNTcgMiAyMHM0LjE1NyAxOCAxOCAxOCAxOC00LjE1NyAxOC0xOFMzMy44NDMgMiAyMCAyem0wIDMyYy03LjczMiAwLTE0LTYuMjY4LTE0LTE0UzEyLjI2OCA2IDIwIDZzMTQgNi4yNjggMTQgMTQtNi4yNjggMTQtMTQgMTR6Ii8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI2xvZ29HcmFkKSIgZD0iTTIwIDEyYy00LjQxMSAwLTggMy41ODktOCA4czMuNTg9IDggOCA4IDgtMy41ODkgOC04LTMuNTg9LTgtOC04eiIvPgo8L3N2Zz4=" alt="Devtonic Logo" class="logo">
-                <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#7B2FF7] to-[#FF8A3D]">Devtonic</div>
-            </div>
-            <div class="flex items-center space-x-6">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+        <div class="logo-container">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICAgIDxkZWZzPgogICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibG9nb0dyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojN0IyRkY3O3N0b3Atb3BhY2l0eToxIiAvPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNGRjhBM0Q7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDwvZGVmcz4KICAgIDxwYXRoIGZpbGw9InVybCgjbG9nb0dyYWQpIiBkPSJNMjAgMkM2LjE1NyAyIDIgNi4xNTcgMiAyMHM0LjE1NyAxOCAxOCAxOCAxOC00LjE1NyAxOC0xOFMzMy44NDMgMiAyMCAyem0wIDMyYy03LjczMiAwLTE0LTYuMjY4LTE0LTE0UzEyLjI2OCA2IDIwIDZzMTQgNi4yNjggMTQgMTQtNi4yNjggMTQtMTQgMTR6Ii8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI2xvZ29HcmFkKSIgZD0iTTIwIDEyYy00LjQxMSAwLTggMy41ODktOCA4czMuNTg9IDggOCA4IDgtMy41ODkgOC04LTMuNTg9LTgtOC04eiIvPgo8L3N2Zz4=" alt="Devtonic Logo" class="logo">
+            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#7B2FF7] to-[#FF8A3D]">Devtonic</div>
+        </div>
+
+        <!-- Hamburger menu button (visible on mobile) -->
+        <button id="menu-toggle" class="md:hidden text-white p-2 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+
+        <!-- Navigation links (hidden on mobile by default) -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 md:bg-transparent md:static md:flex items-center space-x-6 hidden">
+            <!-- Close button for mobile menu -->
+            <button id="close-menu" class="absolute top-4 right-4 text-white md:hidden">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <!-- Navigation items container -->
+            <div class="flex flex-col md:flex-row items-center justify-center h-full space-y-6 md:space-y-0 md:space-x-6">
                 <a href="#courses" class="nav-link">Courses</a>
                 <a href="#why-us" class="nav-link">Why Us</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <!-- Add this theme toggle button -->
                 <button id="theme-toggle" class="relative inline-flex items-center p-1 rounded-full w-14 h-8 transition-colors duration-300 focus:outline-none">
                     <span class="absolute left-1 top-1 w-6 h-6 rounded-full bg-white transition-transform duration-300 transform"></span>
                     <i class="fas fa-sun absolute left-1.5 top-1.5 text-yellow-500"></i>
                     <i class="fas fa-moon absolute right-1.5 top-1.5 text-gray-300"></i>
                 </button>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
 
 
@@ -1653,6 +1667,42 @@ function addCourseOption() {
 
     container.appendChild(newOption);
 }
+
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const closeMenu = document.getElementById('close-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    closeMenu.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a nav link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768) { // Only on mobile
+                toggleMenu();
+            }
+        });
+    });
+
+    // Close menu when resizing to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileMenu.classList.remove('hidden');
+            document.body.classList.remove('overflow-hidden');
+        } else if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    });
+});
     </script>
 </body>
 
